@@ -51,19 +51,6 @@
 
 							<button class="btn stand">Pay 200 $ for standard</button> -->
 						<script>
-							// document.querySelectorAll(".btn").forEach((btn) => {
-							// 	if(btn.classList.contains("premium")){
-
-							// 		btn.addEventListener("click", () => {
-							// 			window.location.href = "scanme.html"
-							// 		})
-							// 	}
-							// 	else if(btn.classList.contains("stand")){
-							// 		btn.addEventListener("click", () => {
-							// 			window.location.href = "scanme1.html"
-							// 		})
-							// 	}
-							// })
 							document.querySelector("form").addEventListener("submit", (e) => {
 								e.preventDefault();
 								// select.addEventListener("change", () => {
@@ -71,7 +58,7 @@
 								let select = document.querySelector("#select");
 								let selection = select.options[select.selectedIndex].value;
 								if(selection == "Bussniess") {
-									window.location.href = `../buss/blog.html`;
+									window.location.href = `../buss/buss.html`;
 								} else if(selection == "youtube") {
 									window.location.href = '../YOUTBE/youtube.html';
 								}
