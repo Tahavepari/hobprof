@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.scss">
+    <link rel="stylesheet" href="style.css">
+    <link rel = "icon" href = 
+    "default-logo.png" 
+            type = "image/x-icon">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body ng-app="employeeApp" ng-controller="employeeController">
+    <div class="content-wrapper">
+      <h2>My Profile</h2>
+      <div class="card">
+      <div class="everyone-wrapper">
+          <section ng-switch on="(editIndex == $index)"
+                   ng-repeat="person in employeeArray track by $index"
+                   class="clearfix">
+                <img src="logo.png" alt="John" style="width:100%">
+              <div class="info-wrapper clearfix">
+                  <h3 ng-switch-default>{{person.firstName}} {{person.lastName}} <span>| {{person.jobTitle}}</span>
+                  </h3>
+
+                  <p ng-switch-default class="p-desc">{{person.jobDesc}}</p>
+                  <span ng-switch-default class="from">From: {{person.from.city}}, {{person.from.state}}</span> <span
+                      ng-switch-default class="phone">Phone: {{person.phone}}</span> <span ng-switch-default
+                                                                                           class="email">Email: {{person.email}}</span>
+                  <!-- Edit Fields -->
+                  <h3 ng-switch-when="true">
+                      <input ng-model="editObject.firstName" placeholder="First Name" type="text"/>
+                      <input ng-model="editObject.lastName" placeholder="Last Name" type="text"/>
+                      <input ng-model="editObject.jobTitle" placeholder="Job Title" type="text"/>
+                  </h3>
+
+                  <p ng-switch-when="true" class="p-desc">
+                      <textarea ng-model="editObject.jobDesc" placeholder="Job Description"> </textarea>
+                  </p>
+                  <span ng-switch-when="true" class="from">
+                      <input ng-model="editObject.from.city" id="city" type="text" placeholder="City"/>
+                      <input ng-model="editObject.from.state" id="state" type="text" placeholder="ST"/>
+                  </span>
+                  <span  ng-switch-when="true" class="phone">
+                      <input ng-model="editObject.phone" type="text" placeholder="Phone"/>
+                  </span>
+                  <span  ng-switch-when="true" class="email">
+                      <input ng-model="editObject.email" type="text" placeholder="Email"/>
+                  </span>
+
+              </div>
+            </br>
+              <div class="edit-wrapper clearfix">
+
+                  <!-- Default Buttons -->
+                  <button class="yellow" ng-switch-default ng-click="editingPerson($index)">Edit my Profile🙂</button>
+                 <!-- <button class="red" ng-switch-default>trash</button>-->
+                <!--More functionality going to be added later-->
+
+                  <!--Buttons for editing -->
+                  <button class="green" ng-switch-when="true" ng-click="saveEdit($index)">save</button></br>
+                  <button class="red" ng-switch-when="true" ng-click="cancelEdit()">cancel</button>
+              </div>
+            </div>
+              <div class="callout">
+                <div class="callout-header">hello 👋</div>
+                <span class="closebtn" onclick="this.parentElement.style.display='none';">×</span>
+                <div class="callout-container">
+                  <p> you can chnage your  profile On clicking the edit button make sure that after changing clcik on save button</p>
+                </div>
+              </div>
+          </section>
+      </div>
+  </div>
+
+  <script>
+      
+angular.module("employeeApp", [])
+    .controller("employeeController", function($scope, employeeService){
+
+        $scope.editIndex = -1;
+        $scope.editObject =   {
+            firstName: "",
+            lastName: "",
+            imgSrc: "",
+            from: {city: "", state:""},
+            phone: "",
+            email: "",
+            jobTitle: "",
+            jobDesc: ""
+        };
+
+        $scope.employeeArray = employeeService.getStaffArray();
+
+
+        //edit button click
+        $scope.editingPerson = function(personIndex){
+            $scope.editObject = angular.copy($scope.employeeArray[personIndex]);
+          /*
+          *WHY COPY???
+          Because, I wont to seperate the edits from the origanal array. Doing this allows the user to cancel their edit and since the fields are not data-binded to the origanl array, it won't make anychanges.
+          */
+            $scope.editIndex = personIndex;
+        };
+
+        //cancelEdit
+        $scope.cancelEdit = function(){
+            $scope.editIndex = -1;
+
+        };
+
+        //saveEdit
+        $scope.saveEdit = function(personIndex){
+            employeeService.updateInfo(personIndex, $scope.editObject);
+            $scope.editIndex = -1;
+        }
+    });
+
+angular.module("employeeApp")
+    .service("employeeService", function(){
+
+
+        //all employees.
+        var staffArray = [
+            {
+                firstName: "firstname",
+                lastName: "lastname",
+                from: {city: "city", state:"state"},
+                phone: "phone_number",
+                email: "semail",
+                jobTitle: "jobTitle",
+                jobDesc: "job description"
+            }
+
+        ];
+
+        this.getStaffArray = function(){
+            return staffArray;
+        };
+
+        //updating person
+        this.updateInfo = function(personIndex, obj){
+            staffArray.splice(personIndex, 1, obj)
+        }
+    });
+  </script>
+</body>
+</html>
