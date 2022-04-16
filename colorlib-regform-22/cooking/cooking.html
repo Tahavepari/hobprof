@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgb(255, 189, 46);
+}
+/* h1{
+/* color: blue; */
+.flip-card { 
+  background-color: transparent;
+  width: 300px;
+  height: 500px;
+  perspective: 1000px;
+  overflow: hidden;
+  box-shadow: 6px 4px 20px 0 rgba(0,0,0,0.2);
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: white;
+  color: black;
+
+}
+
+.flip-card-back {
+  background-color: #2980b9;
+  color: black;
+  transform: rotateY(180deg);
+}
+.contanier{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+.btn {
+  width: 180px;
+  height: 60px;
+  cursor: pointer;
+  background: black;
+  border: 1px solid #91C9FF;
+  outline: none;
+  transition: 1s ease-in-out;
+}
+
+svg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  fill: none;
+  stroke: #fff;
+  stroke-dasharray: 150 480;
+  stroke-dashoffset: 150;
+  transition: 1s ease-in-out;
+}
+
+.btn:hover {
+  transition: 1s ease-in-out;
+  background: #4F95DA;
+}
+
+.btn:hover svg {
+  stroke-dashoffset: -480;
+}
+
+.btn span {
+  color: white;
+  font-size: 18px;
+  font-weight: 100;
+}
+
+/* For mobile phones: */
+[class*="col-"] {
+  width: 100%;
+}
+
+@media only screen and (max-width: 500px) {
+    .contanier{
+        flex-direction: column;
+    }
+    .card-contanier{
+
+        margin-bottom: 1rem;
+        height: fit-content;
+
+        
+    }
+}
+</style>
+</head>
+<body> 
+
+<h1  style="text-align:center " ;> Cooking page👩‍🍳 </h1>
+<h3 style="text-align:center";> These are match making of your work 😇</h3>
+<div class="contanier">
+    <div class="card-contanier"> 
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="cok1.jpeg" alt="Avatar" style="width:300px;height:300px;">
+          <h1>Rohan rajput</h1></br>
+          <h2>📞+91-123456789</br>📧Rohan123@gamil.com</h2>
+        </div>
+        <div class="flip-card-back">
+          <h1>Rohan rajput</h1> 
+          <p>Cooking🧑‍🍳</p> 
+          <p>I have worked in the field of culinary arts for the past 5 years and has earned this skills at many 
+            fine-dining establishments during that time.I then joined a friend’s catering business,
+             called A Moveable Feast, in Mumbai and from there spent 1 year as head baker at Café in Mumbai. 
+            For the past 2 years, i has also served as a culinary arts instructor at Lala lajpatrai university in Mumbai.</p>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="card-contanier">
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="cok2.jpeg" alt="Avatar" style="width:300px;height:300px;">
+              <h1>Abhishek Sharma</h1></br>
+              <h2>📞+91-123456789</br>📧Abhishek@gamil.com</h2>
+            </div>
+            <div class="flip-card-back">
+              <h1>Abhishek Sharma</h1> 
+              <p>Cooking🧑‍🍳</p> 
+              <p>Mehek soni's culinary interests began at a young age by making family meals with her mother. 
+                She graduated in 2007 from the culinary arts program at Eastern Maine Community College (EMCC) 
+                and went on to work in several restaurants and cafés and as a personal chef, specializing in menus for food allergies.
+                 She then worked as a sous-chef and pastry chef at Husson University, where i discovered a love
+                 for teaching which led her to return to EMCC to teach culinary arts.</p>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="card-contanier">
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="cok3.jpeg" alt="Avatar" style="width:300px;height:300px;">
+              <h1>Mehek soni</h1></br>
+              <h2>📞+91-123456789</br>📧Meheksoni@gamil.com</h2>
+            </div>
+            <div class="flip-card-back">
+              <h1>Mehek soni</h1> 
+              <p>Cooking👩‍🍳</p> 
+              <p>Expertise in Strategic Marketing, Product Positioning,
+                I an the Indian born chef and food writer, specialising in Anglo-Indian cuisine. 
+                I was brought up in North India where she grew up surrounded by Indian culture, traditions and lifestyles.
+                 However, I spent several years of my childhood in India where she explored and experienced the vast 
+                and varied cuisines of the country. I come up with my own self-styled "Brit-Indi" style of food, which mixes Indian and Western influences.                
+              </p>
+              <a href="#"> Read more</a>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="card-contanier">
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+
+              <img src="cok3.jpeg" alt="Avatar" style="width:300px;height:300px;">              
+              <h1>Rahul pandey</h1></br>
+              <h2>📞+91-123456789</br>📧Meheksoni@gamil.com</h2>
+            </div>
+            <div class="flip-card-back">
+              <h1>Rahul pandey</h1> 
+              <p>Cooking🧑‍🍳</p> 
+              <p>Imitiaz Qureshi is an Indian chef and the master chef at ITC Hotels, known for creating the
+                culinary brand of Bukhara and reviving the Dum Pukht tradition of cuisine. 
+               He has served several official banquets hosted by the Prime Minister and the President of India.</p>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>
+<!-- <div class="btn">
+<a href="https://tahavepari.github.io/hobprof/">
+  <button>Back to main page</button>
+</a> 
+<div class="container">
+  <div class="center"> -->
+    <button class="btn">
+      <svg width="180px" height="60px" viewBox="0 0 180 60" class="border">
+        <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
+        <polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />
+      </svg>
+      <a href="https://tahavepari.github.io/hobprof/">
+      <span>Back to main page</span>
+    </a>
+    </button>
+  </div>
+</div>
+</div> 
+</body>
+</html>
