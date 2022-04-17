@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgb(255, 189, 46);
+}
+/* h1{
+/* color: blue; */
+.flip-card { 
+  background-color: transparent;
+  width: 300px;
+  height: 500px;
+  perspective: 1000px;
+  overflow: hidden;
+  box-shadow: 6px 4px 20px 0 rgba(0,0,0,0.2);
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: white;
+  color: black;
+
+}
+
+.flip-card-back {
+  background-color: #2980b9;
+  color: black;
+  transform: rotateY(180deg);
+}
+.contanier{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+.btn {
+  width: 180px;
+  height: 60px;
+  cursor: pointer;
+  background: black;
+  border: 1px solid #91C9FF;
+  outline: none;
+  transition: 1s ease-in-out;
+}
+
+svg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  fill: none;
+  stroke: #fff;
+  stroke-dasharray: 150 480;
+  stroke-dashoffset: 150;
+  transition: 1s ease-in-out;
+}
+
+.btn:hover {
+  transition: 1s ease-in-out;
+  background: #4F95DA;
+}
+
+.btn:hover svg {
+  stroke-dashoffset: -480;
+}
+
+.btn span {
+  color: white;
+  font-size: 18px;
+  font-weight: 100;
+}
+
+/* For mobile phones: */
+[class*="col-"] {
+  width: 100%;
+}
+
+@media only screen and (max-width: 500px) {
+    .contanier{
+        flex-direction: column;
+    }
+    .card-contanier{
+
+        margin-bottom: 1rem;
+        height: fit-content;
+
+        
+    }
+}
+</style>
+</head>
+<body> 
+
+<h1  style="text-align:center " ;> Photography page 📸  </h1>
+<h3 style="text-align:center";> These are match making of your work 😇</h3>
+<div class="contanier">
+    <div class="card-contanier"> 
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="photo1.jpeg" alt="Avatar" style="width:300px;height:300px;">
+          <h1>Ashish tripaathi</h1></br>
+          <h2>📞+91-123456789</br>📧Ashishtri@gamil.com</h2>
+        </div>
+        <div class="flip-card-back">
+          <h1>Ashish tripaathi</h1> 
+          <p>photography📸</p> 
+          <p>You don’t take a photograph. You ask quietly to borrow it.
+            Photography for me is not looking, it’s feeling.
+             If you can’t feel what you’re looking at, then you’re never going to get others to feel anything
+             when they look at your pictures.</p>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="card-contanier">
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="photo2.jpeg" alt="Avatar" style="width:300px;height:300px;">
+              <h1>Aaria singh</h1></br>
+              <h2>📞+91-123456789</br>📧Aaria@gamil.com</h2>
+            </div>
+            <div class="flip-card-back">
+              <h1>Aaria singh</h1> 
+              <p>photography📸</p> 
+              <p>Im a travel and documentary photographer based in Maharashtra. 
+                Originally from the beautiful green hills of the country, I'm  currently located in pune. 
+                I studied photography in college and been documenting my explorations ever since. 
+                You can see the  selection of my work on Instagram.</p>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="card-contanier">
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="photo3.jpeg" alt="Avatar" style="width:300px;height:300px;">
+              <h1>Ayan patel</h1></br>
+              <h2>📞+91-123456789</br>patela@gamil.com</h2>
+            </div>
+            <div class="flip-card-back">
+              <h1>Ayan patel</h1> 
+              <p>photography📸</p> 
+              <p>I'm  a conceptual photographer based in Gujarat. 
+                Letting research dictate my practice, I  usually photographs spaces in which events have occurred to 
+                make comments on particular situations. I have won numerous awards for the  photographic work
+                 which has led me to group shows around India. Receiving my Masters degree from the Royal College
+                 of Art in London, I'm still a working practitioner who always has a couple of projects in the works. 
+                You can see a small variety of my work on Instagram and YouTube.                
+              </p>
+              <!-- <a href="#"> Read more</a> -->
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="card-contanier">
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+
+              <img src="photo4.jpeg" alt="Avatar" style="width:300px;height:300px;">              
+              <h1>Priya mehra</h1></br>
+              <h2>📞+91-123456789</br>📧priya21@gamil.com</h2>
+            </div>
+            <div class="flip-card-back">
+              <h1>Priya mehra</h1> 
+              <p>photography📸</p> 
+              <p>Highly-skilled Photographer driven to fulfill planned concept or desired results of each photographic 
+                project. Adaptable and flexible team player able to cope well with obstacles and remain true to creative 
+                goals. Able to give quality artistic direction to produce top quality results.</p>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>
+<!-- <div class="btn">
+<a href="https://tahavepari.github.io/hobprof/">
+  <button>Back to main page</button>
+</a> 
+<div class="container">
+  <div class="center"> -->
+    <button class="btn">
+      <svg width="180px" height="60px" viewBox="0 0 180 60" class="border">
+        <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
+        <polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />
+      </svg>
+      <a href="https://tahavepari.github.io/hobprof/">
+      <span>Back to main page</span>
+    </a>
+    </button>
+  </div>
+</div>
+</div> 
+</body>
+</html>
